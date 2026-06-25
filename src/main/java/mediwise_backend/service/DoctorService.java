@@ -3,6 +3,7 @@ package mediwise_backend.service;
 import mediwise_backend.entity.Doctor;
 import mediwise_backend.repository.DoctorRepository;
 import lombok.RequiredArgsConstructor;
+import mediwise_backend.repository.SymptomRepository;
 import org.springframework.stereotype.Service;
 
 import javax.print.Doc;
@@ -37,4 +38,6 @@ public class DoctorService {
     public void deleteDoctor(long id){
         doctorRepository.deleteById(id);
     }
+
+
 }

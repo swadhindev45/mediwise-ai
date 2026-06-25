@@ -9,5 +9,5 @@ import java.util.Optional;
 
 @Repository
 public interface SymptomRepository extends JpaRepository<SymptomMapping,Long> {
-    Optional<SymptomMapping> findBySymptom(String symptom);
+    Optional<SymptomMapping> findBySymptomIgnoreCase(String symptom);
 }
