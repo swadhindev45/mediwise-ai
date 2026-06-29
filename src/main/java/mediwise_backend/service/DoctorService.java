@@ -39,5 +39,10 @@ public class DoctorService {
         doctorRepository.deleteById(id);
     }
 
+    public Doctor getDoctorById(Long id) {
+        return doctorRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Doctor not found"));
+    }
+
 
 }

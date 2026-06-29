@@ -5,10 +5,11 @@ import mediwise_backend.entity.Doctor;
 import mediwise_backend.service.DoctorService;
 import org.springframework.web.bind.annotation.*;
 
+import javax.print.Doc;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/doctors")
+@RequestMapping("/doctors")
 @RequiredArgsConstructor
 public class DoctorController {
     private final DoctorService doctorService;
@@ -36,5 +37,10 @@ public class DoctorController {
             @PathVariable long id
     ){
         doctorService.deleteDoctor(id);
+    }
+
+    @GetMapping("/{id}")
+    public Doctor getDoctorById(@PathVariable long id){
+        return doctorService.getDoctorById(id);
     }
 }

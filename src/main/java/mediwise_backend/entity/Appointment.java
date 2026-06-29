@@ -1,9 +1,12 @@
 package mediwise_backend.entity;
-
+import mediwise_backend.enums.AppointmentStatusEnum;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
+
+import static javax.management.openmbean.SimpleType.STRING;
 
 @Entity
 @Getter
@@ -18,7 +21,11 @@ public class Appointment {
 
     private LocalDate appointmentDate;
 
-    private String status;
+    private LocalTime appointmentTime;
+
+   @Enumerated(EnumType.STRING)
+   private AppointmentStatusEnum status;
+
 
     @ManyToOne
     private User user;
